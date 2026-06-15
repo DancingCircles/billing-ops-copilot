@@ -1,0 +1,21 @@
+name: billing-ops-copilot
+
+services:
+  api:
+    build: .
+    image: billing-ops-copilot-api:local
+    container_name: billing-ops-copilot-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request, sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/api/health', timeout=5).status < 500 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s

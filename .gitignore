@@ -1,0 +1,17 @@
+__pycache__/
+.venv/
+*.log
+*.pyc
+*.pyo
+.env
+.DS_Store
+*.db
+.claude/
+.agents/
+skills-lock.json
+Chinook_Sqlite.sql
+.pytest_cache/
+htmlcov/
+*.egg-info/
+dist/
+build/

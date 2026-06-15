@@ -1,0 +1,175 @@
+@media (max-width: 1180px) {
+  .app-shell {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+
+  .sidebar {
+    padding-inline: 30px;
+  }
+
+  .chat-canvas {
+    padding-inline: 48px;
+  }
+
+  .assistant-message {
+    padding-left: 0;
+  }
+
+  .composer {
+    width: calc(100% - 120px);
+  }
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(86vw, 360px);
+    transform: translateX(-105%);
+    transition: transform 180ms ease;
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 15;
+    display: block;
+    border: 0;
+    background: rgba(25, 25, 25, 0.24);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+  }
+
+  .sidebar-scrim.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only,
+  .menu-button {
+    display: inline-grid;
+  }
+
+  .chat-canvas {
+    padding: 0 24px;
+  }
+
+  .chat-canvas.is-empty {
+    padding: 0 24px;
+  }
+
+  .menu-button {
+    top: 28px;
+    left: 24px;
+  }
+
+  .prompt-heading {
+    margin-top: 0;
+  }
+
+  .message-stack {
+    gap: 34px;
+  }
+
+  .case-strip {
+    margin-top: 76px;
+  }
+
+  .user-message,
+  .assistant-message {
+    align-items: flex-start;
+  }
+
+  .message-orb {
+    width: 38px;
+    height: 38px;
+  }
+
+  .assistant-avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .message-card {
+    font-size: 17px;
+  }
+
+  .composer {
+    width: calc(100% - 52px);
+  }
+}
+
+@media (max-width: 560px) {
+  .chat-canvas {
+    padding-inline: 18px;
+  }
+
+  .prompt-heading h1 {
+    max-width: 270px;
+    text-align: center;
+    line-height: 1.08;
+  }
+
+  .lime-underline {
+    width: 210px;
+  }
+
+  .heli-cutout {
+    top: 120px;
+    left: 54%;
+    width: 110px;
+  }
+
+  .cloud-left {
+    top: 210px;
+    left: -35px;
+  }
+
+  .cloud-right {
+    display: none;
+  }
+
+  .message-row {
+    gap: 12px;
+  }
+
+  .user-card,
+  .assistant-card {
+    width: auto;
+    max-width: 100%;
+    padding: 18px 19px;
+  }
+
+  .composer {
+    grid-template-columns: 42px minmax(0, 1fr) 50px;
+    min-height: 92px;
+    padding: 18px 22px;
+  }
+
+  .composer input {
+    font-size: 17px;
+  }
+
+  .case-strip {
+    max-width: calc(100vw - 36px);
+    font-size: 12px;
+  }
+
+  .send-button {
+    width: 42px;
+    height: 42px;
+  }
+}

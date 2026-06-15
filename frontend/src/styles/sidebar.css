@@ -1,0 +1,248 @@
+.sidebar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 42px 36px 36px;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(248, 246, 239, 0.92), rgba(248, 246, 239, 0.92)),
+    url("../assets/images/paper-texture.png") center / cover;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 60px;
+}
+
+.brand-mark {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 140px;
+  height: 46px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand-mark img {
+  position: absolute;
+  inset: -8px -18px;
+  width: calc(100% + 36px);
+  height: calc(100% + 16px);
+}
+
+.brand-mark span {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+}
+
+.primary-nav {
+  display: grid;
+}
+
+.nav-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-item > img {
+  position: absolute;
+  inset: -7px -12px -8px -11px;
+  width: calc(100% + 23px);
+  height: calc(100% + 15px);
+  object-fit: fill;
+}
+
+.nav-item svg,
+.nav-item span,
+.nav-item input {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.nav-item.is-selected span {
+  font-weight: 760;
+}
+
+.conversation-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 40px;
+  padding-top: 39px;
+  padding-right: 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-top: 1px solid var(--line);
+  scrollbar-width: none;
+}
+
+.conversation-list::-webkit-scrollbar {
+  display: none;
+}
+
+.conversation-group + .conversation-group {
+  margin-top: 48px;
+}
+
+.conversation-group h2 {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 520;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 38px;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+}
+
+.conversation-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 38px;
+  flex: 1 1 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.conversation-select span {
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conversation-item.is-active .conversation-select span {
+  font-weight: 650;
+}
+
+.conversation-actions {
+  display: flex;
+  gap: 2px;
+  flex: 0 0 auto;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+
+.conversation-item:hover .conversation-actions,
+.conversation-item.is-active .conversation-actions {
+  opacity: 1;
+}
+
+.conversation-actions button,
+.conversation-edit-form button {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.conversation-actions button:hover,
+.conversation-edit-form button:hover {
+  color: var(--ink);
+  background: rgba(25, 25, 25, 0.06);
+}
+
+.conversation-edit-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 26px 26px;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.conversation-edit-form input {
+  min-width: 0;
+  height: 30px;
+  border: 0;
+  border-bottom: 1px solid rgba(25, 25, 25, 0.22);
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+  margin-top: 24px;
+}
+
+.profile-dot,
+.message-orb {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.profile-dot {
+  width: 48px;
+  height: 48px;
+}
+
+.profile-row strong,
+.profile-row span {
+  display: block;
+}
+
+.profile-row strong {
+  font-size: 16px;
+  font-weight: 760;
+}
+
+.profile-row span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.sidebar-scrim {
+  display: none;
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.npm-cache/
+.vite/
+.DS_Store
+
+*.log
+*.local
+
+.chrome-profile*/
+*-screenshot*.png
+centered-empty-state.png
+interaction-screenshot.png
+revised-chat-screenshot.png
+no-top-layer-screenshot.png
