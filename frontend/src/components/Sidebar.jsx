@@ -1,6 +1,4 @@
-import { ExternalLink, MessageSquare, X } from "lucide-react";
-import logoPaint from "../assets/brand/aiagent-selected.svg";
-import navPaint from "../assets/brand/nav-new-chat-selected.svg";
+import { MessageSquare, X } from "lucide-react";
 import { ConversationList } from "./ConversationList.jsx";
 
 export function Sidebar({
@@ -19,12 +17,8 @@ export function Sidebar({
       <aside className={`sidebar ${isOpen ? "is-open" : ""}`}>
         <div className="sidebar-header">
           <a className="brand-mark" href="/" aria-label="AI Agent home">
-            <img src={logoPaint} alt="" aria-hidden="true" />
             <span>AI AGENT</span>
           </a>
-          <button className="icon-control desktop-only" type="button" aria-label="Open in new window">
-            <ExternalLink size={21} strokeWidth={1.8} />
-          </button>
           <button className="icon-control mobile-only" type="button" aria-label="Close menu" onClick={onClose}>
             <X size={22} strokeWidth={1.9} />
           </button>
@@ -36,7 +30,6 @@ export function Sidebar({
             type="button"
             onClick={onNewChat}
           >
-            <img src={navPaint} alt="" aria-hidden="true" />
             <MessageSquare size={21} strokeWidth={1.75} />
             <span>New Chat</span>
           </button>

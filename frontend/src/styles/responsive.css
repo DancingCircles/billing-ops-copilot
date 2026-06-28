@@ -123,25 +123,6 @@
     line-height: 1.08;
   }
 
-  .lime-underline {
-    width: 210px;
-  }
-
-  .heli-cutout {
-    top: 120px;
-    left: 54%;
-    width: 110px;
-  }
-
-  .cloud-left {
-    top: 210px;
-    left: -35px;
-  }
-
-  .cloud-right {
-    display: none;
-  }
-
   .message-row {
     gap: 12px;
   }

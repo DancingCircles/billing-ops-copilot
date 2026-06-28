@@ -1,7 +1,6 @@
 import { Menu } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Composer } from "./Composer.jsx";
-import { DecorativeLayer } from "./DecorativeLayer.jsx";
 import { MessageBubble } from "./MessageBubble.jsx";
 
 export function ChatCanvas({
@@ -29,12 +28,9 @@ export function ChatCanvas({
         <Menu size={26} strokeWidth={1.8} />
         <span>Menu</span>
       </button>
-      <DecorativeLayer />
-
       {!hasMessages ? (
         <div className="prompt-heading">
           <h1>How can I help you today?</h1>
-          <span className="lime-underline" aria-hidden="true" />
         </div>
       ) : null}
 

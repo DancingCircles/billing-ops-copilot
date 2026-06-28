@@ -1,6 +1,5 @@
 import { ArrowUp, Paperclip } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import inputPaper from "../assets/brand/torn-input-box.svg";
 
 export function Composer({ disabled = false, onSend }) {
   const [value, setValue] = useState("");
@@ -33,7 +32,6 @@ export function Composer({ disabled = false, onSend }) {
         submit();
       }}
     >
-      <img className="composer-paper" src={inputPaper} alt="" aria-hidden="true" />
       <button className="attach-button" type="button" aria-label="Attach file">
         <Paperclip size={23} strokeWidth={1.65} />
       </button>

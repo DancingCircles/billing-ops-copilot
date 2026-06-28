@@ -27,67 +27,21 @@
   cursor: pointer;
 }
 
-.decor-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-.chat-canvas.has-messages .decor-layer {
-  opacity: 0.22;
-}
-
-.heli-cutout {
-  position: absolute;
-  top: 154px;
-  left: 9.5%;
-  width: clamp(130px, 9vw, 184px);
-  transform: rotate(-4deg);
-}
-
-.cloud-cutout {
-  position: absolute;
-  width: clamp(210px, 18vw, 330px);
-  opacity: 0.9;
-  filter: saturate(0.1) contrast(1.12);
-  mix-blend-mode: multiply;
-}
-
-.cloud-left {
-  top: 246px;
-  left: 14%;
-}
-
-.cloud-right {
-  top: 188px;
-  right: 2%;
-}
-
 .prompt-heading {
   position: relative;
   z-index: 2;
   display: grid;
   justify-items: center;
   margin: 0 auto;
-  transform: translateY(-54px);
+  transform: translateY(-42px);
 }
 
 .prompt-heading h1 {
   margin: 0;
   font-size: clamp(30px, 2.25vw, 36px);
-  line-height: 1;
+  line-height: 1.08;
   font-weight: 820;
-  letter-spacing: -0.035em;
-}
-
-.lime-underline {
-  display: block;
-  width: 292px;
-  height: 27px;
-  margin-top: 15px;
-  background: url("../assets/images/lime-brush-stroke-wide.png") center / contain no-repeat;
+  letter-spacing: -0.02em;
 }
 
 .message-viewport {
@@ -167,7 +121,7 @@
   color: var(--ink);
   font-size: 16px;
   line-height: 1.5;
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
   overflow-wrap: anywhere;
 }
 
@@ -466,7 +420,7 @@
 .composer {
   position: absolute;
   left: 50%;
-  bottom: 14px;
+  bottom: 24px;
   transform: translateX(-50%);
   z-index: 5;
   display: grid;
@@ -474,25 +428,18 @@
   align-items: center;
   justify-self: center;
   width: min(52vw, 720px);
-  min-height: 92px;
-  padding: 18px 28px 20px;
-}
-
-.composer-paper {
-  position: absolute;
-  inset: -16px -22px -25px -24px;
-  width: calc(100% + 46px);
-  height: calc(100% + 41px);
-  object-fit: fill;
-  filter: drop-shadow(0 15px 32px rgba(42, 39, 34, 0.1));
-  pointer-events: none;
+  min-height: 68px;
+  padding: 12px 14px 12px 18px;
+  border: 1px solid rgba(25, 25, 25, 0.16);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+  backdrop-filter: blur(10px);
 }
 
 .composer input,
 .attach-button,
 .send-button {
-  position: relative;
-  z-index: 1;
+  min-width: 0;
 }
 
 .composer input {
@@ -516,18 +463,35 @@
 .send-button {
   display: inline-grid;
   place-items: center;
-  border: 0;
+  border: 1px solid transparent;
   background: transparent;
   cursor: pointer;
+}
+
+.attach-button {
+  width: 38px;
+  height: 38px;
+  color: #4b4d4c;
+}
+
+.attach-button:hover {
+  border-color: rgba(25, 25, 25, 0.16);
+  background: rgba(25, 25, 25, 0.05);
 }
 
 .send-button {
   width: 44px;
   height: 44px;
   justify-self: end;
-  border-radius: 50%;
+  border-color: #171717;
+  border-radius: 0;
   background: #171717;
   color: #fff;
+}
+
+.send-button:not(:disabled):hover {
+  background: var(--lime);
+  color: #171717;
 }
 
 .send-button:disabled {
